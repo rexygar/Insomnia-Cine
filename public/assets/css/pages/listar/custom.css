@@ -1,0 +1,17 @@
+.sorting_1 {
+    text-transform: uppercase;  
+    text-align: center;
+}
+
+.table-detalle thead th{
+    text-transform: uppercase;
+    text-align: center;
+    color:black;
+    font-size: 1rem;
+}
+
+.table-detalle tbody tr td {
+    text-align: center !important;
+}
+
+ 

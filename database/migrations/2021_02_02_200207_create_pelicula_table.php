@@ -22,6 +22,7 @@ class CreatePeliculaTable extends Migration
             $table->string('Año_estreno');
             $table->string('IMG_portada');
             $table->string('IMGs');
+            $table->boolean('En_Cartelera');
             $table->timestamps();
         });
     }

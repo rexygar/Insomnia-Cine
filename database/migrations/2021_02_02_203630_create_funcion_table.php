@@ -19,6 +19,7 @@ class CreateFuncionTable extends Migration
             $table->foreign('pelicula_id')->references('id')->on('pelicula')->onDelete('cascade');
             $table->date('dia');
             $table->dateTime('hora');
+            $table->integer('precio');
             $table->timestamps();
         });
     }

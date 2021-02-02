@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Subcripcion extends Migration
+class CreateBlogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Subcripcion extends Migration
      */
     public function up()
     {
-        Schema::create('subcripcion', function (Blueprint $table) {
+        Schema::create('blog', function (Blueprint $table) {
             $table->id();
-            $table->date('inicio');
-            $table->date('termino');
+            $table->string('Titulo');
+            $table->date('publicacion');
+            $table->string('contenido');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class Subcripcion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subcripcion');
+        Schema::dropIfExists('blog');
     }
 }

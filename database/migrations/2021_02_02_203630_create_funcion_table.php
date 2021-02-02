@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Noticia extends Migration
+class CreateFuncionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Noticia extends Migration
      */
     public function up()
     {
-        Schema::create('noticia', function (Blueprint $table) {
+        Schema::create('funcion', function (Blueprint $table) {
             $table->id();
-            $table->string('Titulo');
-            $table->date('publicacion');
-            $table->string('contenido');
+            $table->bigInteger('pelicula_id')->unsigned();
+            $table->foreign('pelicula_id')->references('id')->on('pelicula')->onDelete('cascade');
+            $table->date('dia');
+            $table->dateTime('hora');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class Noticia extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('noticia');
+        Schema::dropIfExists('funcion');
     }
 }

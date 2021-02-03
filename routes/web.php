@@ -14,9 +14,79 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.index');
 });
 
-Auth::routes();
+//Peliculas
+Route::get('/Crear_pelicula', function () {
+    return view('APP.Peliculas.Create');
+});
+Route::get('/Listar_pelicula', function () {
+    return view('APP.Peliculas.Listar');
+});
+Route::get('/Modificar_pelicula', function () {
+    return view('APP.Peliculas.Update');
+});
+// Route::get('/Eliminar_pelicula', function () {
+//     return view('APP.Peliculas.Create');
+// });
+
+
+//Generos
+Route::get('/Crear_Generos', function () {
+    return view('APP.Generos.Create');
+});
+Route::get('/Listar_Generos', function () {
+    return view('APP.Generos.Listar');
+});
+Route::get('/Modificar_Generos', function () {
+    return view('APP.Generos.Update');
+});
+// Route::get('/Eliminar_Generos', function () {
+//     return view('APP.Generos.Create');
+// });
+
+//Noticias
+Route::get('/Crear_Noticias', function () {
+    return view('APP.Noticias.Create');
+});
+Route::get('/Listar_Noticias', function () {
+    return view('APP.Noticias.Listar');
+});
+Route::get('/Modificar_Noticias', function () {
+    return view('APP.Noticias.Update');
+});
+// Route::get('/Eliminar_Noticias', function () {
+//     return view('APP.Noticias.Create');
+// });
+
+//Subscripcion
+Route::get('/Crear_Subscripcion', function () {
+    return view('APP.Subscripciones.Create');
+});
+Route::get('/Listar_Subscripcion', function () {
+    return view('APP.Subscripciones.Listar');
+});
+Route::get('/Modificar_Subscripcion', function () {
+    return view('APP.Subscripciones.Update');
+});
+// Route::get('/Eliminar_Subscripcion', function () {
+//     return view('APP.Subscripciones.Create');
+// });
+
+//Usuarios
+Route::get('/Crear_Usuarios', function () {
+    return view('APP.Usuarios.Create');
+});
+Route::get('/Listar_Usuarios', function () {
+    return view('APP.Usuarios.Listar');
+});
+Route::get('/Modificar_Usuarios', function () {
+    return view('APP.Usuarios.Update');
+});
+// Route::get('/Eliminar_Usuarios', function () {
+//     return view('APP.Usuarios.Create');
+// });
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

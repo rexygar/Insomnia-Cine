@@ -23,15 +23,18 @@
                                     class="fa fa-power-off"></i>Salir</a>
                         </form>
                     </li>
+                    <li>
+                        <a href="#"><i class="fa fa-address-card"></i><span>Perfil</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
         <nav id="left-sidebar-nav" class="sidebar-nav">
             <ul id="main-menu" class="metismenu animation-li-delay">
-                <li class="header">Main</li>
+                <li class="header">Principal</li>
                 <li><a href="/"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
 
-                <li class="header">Apps</li>
+                <li class="header">Modulos</li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-film"></i><span>Peliculas</span></a>
                     <ul>
@@ -56,15 +59,13 @@
                         <li><a href="{{ route('user.listar') }}">Listar</a></li>
                     </ul>
                 </li>
-                <!--
-                <li class="header">Funciones</li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-download"></i>
-                        <span>prueba</span>
-                    </a>
+                <li class="header">
+                    <hr style="width: 100%">
                 </li>
-                -->
+                <li>
+                    <a href="#"><i class="fa fa-address-card"></i><span>Perfil</span></a>
+                </li>
+                
             </ul>
             <br><br><br><br><br><br>
         </nav>

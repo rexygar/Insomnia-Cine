@@ -4,12 +4,22 @@
 
 
 @section('content')
+<style>
+.input-ctrl-bg{
+    background-color: aliceblue;
+}
+.input-ctrl-bg:focus {
+    background-color: aliceblue;
+}
 
+</style>
 <div class="container-fluid">
     <div class="row">
-        <h1>Agregar Pelicula</h1>
+        <div class="col offset-1">
+            <h1>Agregar Pelicula</h1>
         <br>
         <br>
+        </div>
         <div class="col-md-12">
             <form method="POST" action="" enctype="multipart/form-data">
                 <div class="col-md-10 offset-lg-2">
@@ -17,17 +27,17 @@
                     <div class="form-group col-md-8">
                         <label for="Titulo">Titulo:</label>
                         <input required placeholder="ingrese el Titulo de la publicacion" type="input"
-                        class="form-control" id="Titulo" name="Titulo">
+                        class="form-control input-ctrl-bg" id="Titulo" name="Titulo">
                     </div>
                     <div class="form-group col-md-8">
                         <label for="Sinopsis "> Sinopsis:</label>
-                        <input required placeholder="ingrese una Sinopsis" type="input" class="form-control"
+                        <input required placeholder="ingrese una Sinopsis" type="input" class="form-control input-ctrl-bg"
                             id="Sinopsis" name="Sinopsis">
                     </div>
                     
                     <div class="form-group col-md-8">
                         <label for="Genero">Genero:</label>
-                        <select class="form-control" name="Genero" id="Genero">
+                        <select class="form-control input-ctrl-bg" name="Genero" id="Genero">
                             <option value="0">--- Seleccionar Genero ---</option>
                             {{-- @foreach ($Genero as $cate)
                             <option value="{{ $cate->idGenero }}"> {{ $cate ->Genero }}</option>
@@ -36,13 +46,13 @@
                     </div>
                     <div class="form-group col-md-8">
                         <label for="Clasificacion">Clasificacion:</label>
-                        <select class="form-control" name="Subcat" id="Subcat">
+                        <select class="form-control input-ctrl-bg" name="Subcat" id="Subcat">
                             <option value="0">--- Seleccionar Clasificacion ---</option>
                         </select>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="Calificacion">Calificacion:</label>
-                        <select class="form-control" name="Subcat" id="Subcat">
+                        <select class="form-control input-ctrl-bg" name="Subcat" id="Subcat">
                             <option value="0">--- Seleccionar Calificacion ---</option>
                         </select>
                     </div>
@@ -71,7 +81,7 @@
                             <div class="form-group col-md-2">
                                 <label class="btn btn-default btn-file">
                                     Subir Imagen <input type="file" onchange="readURL(this);" name="image[]" multiple
-                                        class="form-control">
+                                        class="form-control input-ctrl-bg">
                                 </label>
                             </div>
                         </div>

@@ -4,8 +4,8 @@
 
 @section('content')
 
-<div class="auth_brand" style="margin-bottom: 0px">
-    <a class="navbar-brand" href="#"><img <img src="{{ asset('assets/images/logo.png') }}" width="300" style="background: #062c62" class="d-inline-block align-top mr-2" alt=""></a>                                                
+<div class="auth_brand" style="margin-bottom: 0px;">
+    <a class="navbar-brand" href="#"><img src="{{ asset('assets/images/logo.jpg') }}" width="200" height="100" class="d-inline-block align-top mr-2" alt=""></a>                                                
 </div>
 <div class="card">
     <div class="header">

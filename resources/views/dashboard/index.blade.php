@@ -21,7 +21,7 @@
                 <div class="block-header">
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h1>BIENVENIDO A LA PIZARRA VIRTUAL</h1>
+                            <h1>BIENVENIDO AL SISTEMA DE INSOMNIA</h1>
                         </div>
                     </div>
                 </div>
@@ -109,52 +109,28 @@
                 <div class="row">
 
                     <!-- Area Chart -->
-                    <div class="col-xl-8 col-lg-12">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">ÚLTIMAS OT</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Peliculas en Cartelera</h6>
                             </div>
 
                             <!-- Card Body -->
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">NOMBRE</th>
-                                        <th scope="col">EQUIPO</th>
-                                        <th scope="col">FECHA INGRESO</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Categoria</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">llll</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($data as $dat)
-                                <tr>
-                                    <th scope="row">{{ $dat->id }}</th>
-                                    <td>{{ $dat->NomCliente }}</td>
-                                    <td>{{ $dat->NomTarea }}</td>
-                                    <td>{{ $dat->FhoCreacionOT }}</td>
-                                </tr>
-                                @endforeach --}}
+                                    
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-
-                    <!-- Pie Chart -->
-                    <div class="col-xl-4">
-
-                        <!-- Approach -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Anuncios</h6>
-                            </div>
-                            <div class="card-body">
-                                {{-- @foreach ($text as $texto)
-                                {!!  $texto->datos !!}
-                            @endforeach --}}
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 

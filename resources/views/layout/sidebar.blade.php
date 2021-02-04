@@ -1,7 +1,7 @@
 <div id="left-sidebar" class="sidebar">
     <a href="javascript:void(0);" class="menu_toggle"><i class="fa fa-angle-left"></i></a>
     <div class="navbar-brand">
-        <a href=""><img src="{{ asset('assets/images/logo.png') }}" class="img-fluid logo"></a>
+        <a href=""><img src="{{ asset('assets/images/logo.jpg') }}" class="img-fluid logo"></a>
         <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="fa fa-close"></i></button>
     </div>
     <div class="sidebar-scroll">

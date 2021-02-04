@@ -12,7 +12,13 @@
                 <ul class="nav navbar-nav">
                     <li class="hidden-xs"><a href="javascript:void(0);" id="btnFullscreen" class="icon-menu"><i
                                 class="fa fa-arrows-alt"></i></a></li>
-                    <li><a href="" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                    <li>
+                        <form id="salir" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <a href="#" onclick="document.getElementById('salir').submit()" class="icon-menu"><i
+                                    class="fa fa-power-off"></i></a>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

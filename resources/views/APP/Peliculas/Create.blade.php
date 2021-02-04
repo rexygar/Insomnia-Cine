@@ -53,17 +53,28 @@
                                             <div class="container">
                                                 <div class="col-12">
                                                     <div class="row">
-                                                        <div class="form-group col-md-6">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="Año_estreno">Año_estreno:</label>
+                                                            <input class="form-control input-ctrl-bg" type="date"
+                                                                name="Año_estreno" id="Año_estreno">
+                                                        </div>
+                                                        <div class="form-group col-md-12">
                                                             <label for="Genero">Genero:</label>
                                                             <select class="form-control input-ctrl-bg" name="Genero"
                                                                 id="Genero">
                                                                 <option value="0">--- Seleccionar Genero ---</option>
+                                                                <option value="1000">--- Nuevo Genero ---</option>
                                                                 {{-- @foreach ($Genero as $cate)
-                                <option value="{{ $cate->idGenero }}"> {{ $cate ->Genero }}</option>
+                                                                    <option value="{{ $cate->idGenero }}">
+                                                                {{ $cate ->Genero }}</option>
+                                                                <option value="1"> </option>
+                                                                {{-- @foreach ($Genero as $cate)
+                                                                        <option value="{{ $cate->idGenero }}">
+                                                                {{ $cate ->Genero }}</option>
                                                                 @endforeach--}}
                                                             </select>
                                                         </div>
-                                                        <div class="form-group col-md-6">
+                                                        <div class="form-group col-md-12">
                                                             <label for="Clasificacion">Clasificacion:</label>
                                                             <select class="form-control input-ctrl-bg" name="Subcat"
                                                                 id="Subcat">
@@ -71,25 +82,29 @@
                                                                 </option>
                                                             </select>
                                                         </div>
+                                                        <div class="form-group col-md-12 opcional">
+                                                            <form action=""><label for="GeneroNew">Genero:</label>
+                                                                <input required
+                                                                    placeholder="ingrese el Genero de la publicacion"
+                                                                    type="input" class="form-control input-ctrl-bg"
+                                                                    id="GeneroNew" name="GeneroNew">
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="container">
                                                 <div class="col-12">
                                                     <div class="row">
-                                                        <div class="form-group col-md-6">
+                                                        <!-- <div class="form-group col-md-6">
                                                             <label for="Calificacion">Calificacion:</label>
                                                             <select class="form-control input-ctrl-bg" name="Subcat"
                                                                 id="Subcat">
                                                                 <option value="0">--- Seleccionar Calificacion ---
                                                                 </option>
                                                             </select>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="Año_estreno">Año_estreno:</label>
-                                                            <input class="form-control input-ctrl-bg" type="date"
-                                                                name="Año_estreno" id="Año_estreno">
-                                                        </div>
+                                                        </div> -->
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,9 +115,10 @@
 
 
                                             <div class="row">
-                                                <div class="col-md-2">
+                                                <div class="col-md-2  offset-lg-10">
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-success"> crear  </button>
+                                                        <button type="submit" class="btn btn-success">
+                                                            Agregar </button>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="form-group col-md-6">
@@ -123,6 +139,33 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (jQuery) {
+            // jQuery is loaded  
+            alert("Yeah!");
+        } else {
+            // jQuery is not loaded
+            alert("Doesn't Work");
+        }
+    });
+
+</script>
+<script defer>
+    window.onload = function () {
+
+        $('.opcional').hide();
+        $('select[name="Genero"]').on('change', function () {
+            var GeneroID = $(this).val();
+            if (GeneroID == 1000) {
+                $('.opcional').show();
+            } else {
+                $('.opcional').hide();
+            }
+        });
+    };
+
+</script>
 <!-- <div class="row">
             <div class="input-group control-group increment">
             <div class="form-group ">

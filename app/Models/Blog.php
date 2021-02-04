@@ -10,4 +10,22 @@ class Blog extends Model
     use HasFactory;
 
     protected $table = 'blog';
+    protected $fillable =[
+        'Titulo',
+         'publicacion',
+         'contenido'
+    ];
+
+
+    public function Usuario()
+    {
+        return $this->belongsTo('App\User');
+    }
+    public function Posts()
+    {
+        return $this->hasMany('App\Genero', 'id');
+    }
+
+
+
 }

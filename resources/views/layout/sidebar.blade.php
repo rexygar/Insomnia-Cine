@@ -11,11 +11,7 @@
             </div>
             <div class="dropdown">
                 <span>
-                    {{-- @if (isset(Auth::user()->roles[0]['role']) && Auth::user()->roles[0]['role'] != '')
-                        {{ Auth::user()->roles[0]['role'] }},
-                    @else
-                        Invitado,
-                    @endif --}}
+                   
                 </span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name"
                     data-toggle="dropdown"><strong></strong></a>
@@ -31,71 +27,46 @@
             </div>
         </div>
         <nav id="left-sidebar-nav" class="sidebar-nav">
-            {{-- @foreach (Auth::user()->roles as $rol) --}}
             <ul id="main-menu" class="metismenu animation-li-delay">
                 <li class="header">Main</li>
                 <li><a href="/"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
 
                 <li class="header">Apps</li>
-                {{-- @if (($rol['role'] == 'Administrador' && $rol->area[0]->nombre == 'general') || $rol['role'] == 'Vendedor') --}}
                 <li>
-                    <a href="#" class="has-arrow"><i class="fa fa-folder"></i><span>Productos</span></a>
+                    <a href="#" class="has-arrow"><i class="fa fa-film"></i><span>Peliculas</span></a>
                     <ul>
                         <li><a href="">Listar</a></li>
                     </ul>
                 </li>
-                {{-- @endif --}}
-                {{-- @if ($rol['role'] == 'Administrador' || $rol['role'] == 'Usuario') --}}
                 <li>
-                    <a href="#" class="has-arrow"><i class="fa fa-clone"></i><span>Pendientes</span></a>
+                    <a href="#" class="has-arrow"><i class="fa fa-newspaper-o"></i><span>Noticias</span></a>
                     <ul>
-                        {{-- @if ($rol->area[0]->nombre == 'general') --}}
-                        <li><a href="">Listar Todo</a></li>
-                        {{-- @else --}}
                         <li><a href="">Listar</a></li>
-                        {{-- @endif --}}
                     </ul>
                 </li>
-                {{-- @endif --}}
-                {{-- @if ($rol['role'] == 'Administrador' && $rol->area[0]->nombre == 'general') --}}
+                <li>
+                    <a href="#" class="has-arrow"><i class="fa fa-file"></i><span>Blog</span></a>
+                    <ul>
+                        <li><a href="">Listar</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-user"></i><span>Usuarios</span></a>
                     <ul>
                         <li><a href="">Listar</a></li>
                     </ul>
                 </li>
-                {{-- @endif --}}
-                {{-- @if (($rol['role'] == 'Administrador' && $rol->area[0]->nombre == 'general') || $rol['role'] == 'Vendedor') --}}
-                <li>
-                    <a href="#" class="has-arrow"><i class="fa fa-clipboard"></i><span>Ventas</span></a>
-                    <ul>
-                        <li><a href="">Listar</a></li>
-                        <li><a href="">Crear</a></li>
-                    </ul>
-                </li>
-                {{-- @endif --}}
-                {{-- @if (($rol['role'] == 'Administrador' && $rol->area[0]->nombre == 'general') || $rol['role'] == 'Vendedor') --}}
-                <li>
-                    <a href="#" class="has-arrow"><i class="fa fa-clipboard"></i><span>Cotizacion</span></a>
-                    <ul>
-                        <li><a href="">Listar</a></li>
-                    </ul>
-                </li>
-                {{-- @endif --}}
-                {{-- @if ($rol['role'] == 'Administrador') --}}
+                <!--
                 <li class="header">Funciones</li>
-                {{-- @if ($rol->area[0]->nombre == 'general') --}}
-                <li><a href=""><i class="fa fa-download"></i>
-                        <span>Cargar Data</span></a></li>
-
-                <li><a href=""><i class="fa fa-bullhorn"></i><span>Exportar Productos</span></a></li>
-                {{-- @endif --}}
-                <li><a href=""><i class="fa fa-bullhorn"></i><span>Crear
-                            Anuncios</span></a></li>
-                {{-- @endif --}}
+                <li>
+                    <a href="">
+                        <i class="fa fa-download"></i>
+                        <span>prueba</span>
+                    </a>
+                </li>
+                -->
             </ul>
             <br><br><br><br><br><br>
-            {{-- @endforeach --}}
         </nav>
     </div>
 </div>

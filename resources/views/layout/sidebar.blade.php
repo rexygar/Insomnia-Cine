@@ -14,10 +14,10 @@
                    
                 </span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name"
-                    data-toggle="dropdown"><strong></strong></a>
+                    data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
                     <li>
-                        <form id="salir" action="" method="POST">
+                        <form id="salir" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <a href="#" onclick="document.getElementById('salir').submit()"><i
                                     class="fa fa-power-off"></i>Salir</a>
@@ -41,19 +41,19 @@
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-newspaper-o"></i><span>Noticias</span></a>
                     <ul>
-                        <li><a href="">Listar</a></li>
+                        <li><a href="#">Listar</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-file"></i><span>Blog</span></a>
                     <ul>
-                        <li><a href="">Listar</a></li>
+                        <li><a href="#">Listar</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-user"></i><span>Usuarios</span></a>
                     <ul>
-                        <li><a href="">Listar</a></li>
+                        <li><a href="#">Listar</a></li>
                     </ul>
                 </li>
                 <!--

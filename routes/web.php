@@ -13,9 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard.index');
+Route::get('/home', function(){
+    return redirect('/');
+})->name('home');
+
+Auth::routes();
+
+// Login 
+
+Route::get('authentication/login',                  [App\Http\Controllers\AuthenticationController::class, 'login'])->name('authentication.login');
+Route::get('authentication/register',               [App\Http\Controllers\AuthenticationController::class, 'register'])->name('authentication.register');
+Route::get('authentication/forgotpassword',         [App\Http\Controllers\AuthenticationController::class, 'forgotpassword'])->name('authentication.forgotpassword');
+Route::get('authentication/error404',               [App\Http\Controllers\AuthenticationController::class, 'error404'])->name('authentication.error404');
 
 //Peliculas
 Route::get('/Crear_pelicula', function () {
@@ -83,6 +93,5 @@ Route::get('/Modificar_Usuarios', function () {
 // Route::get('/Eliminar_Usuarios', function () {
 //     return view('APP.Usuarios.Create');
 // });
-// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

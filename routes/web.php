@@ -21,9 +21,7 @@ Route::get('/', function () {
 Route::get('/Crear_pelicula', function () {
     return view('APP.Peliculas.Create');
 });
-Route::get('/Listar_pelicula', function () {
-    return view('APP.Peliculas.Listar');
-});
+Route::get('/Listar_pelicula', [App\Http\Controllers\PeliculaController::class, 'listar'])->name('pelicula.listar');
 Route::get('/Modificar_pelicula', function () {
     return view('APP.Peliculas.Update');
 });
@@ -50,9 +48,7 @@ Route::get('/Modificar_Generos', function () {
 Route::get('/Crear_Noticias', function () {
     return view('APP.Noticias.Create');
 });
-Route::get('/Listar_Noticias', function () {
-    return view('APP.Noticias.Listar');
-});
+Route::get('/Listar_Noticias', [App\Http\Controllers\NoticiaController::class, 'listar'])->name('noticia.listar');
 Route::get('/Modificar_Noticias', function () {
     return view('APP.Noticias.Update');
 });

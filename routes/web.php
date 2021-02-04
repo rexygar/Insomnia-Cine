@@ -39,14 +39,15 @@ Route::get('/Modificar_pelicula', function () {
 //     return view('APP.Peliculas.Create');
 // });
 
+// BLOG
+
+Route::get('/Listar_Blog', [App\Http\Controllers\BlogController::class, 'listar'])->name('blog.listar');
 
 //Generos
 Route::get('/Crear_Generos', function () {
     return view('APP.Generos.Create');
 });
-Route::get('/Listar_Generos', function () {
-    return view('APP.Generos.Listar');
-});
+Route::get('/Listar_Generos', [App\Http\Controllers\GeneroController::class, 'listar'])->name('genero.listar');
 Route::get('/Modificar_Generos', function () {
     return view('APP.Generos.Update');
 });
@@ -84,9 +85,7 @@ Route::get('/Modificar_Subscripcion', function () {
 Route::get('/Crear_Usuarios', function () {
     return view('APP.Usuarios.Create');
 });
-Route::get('/Listar_Usuarios', function () {
-    return view('APP.Usuarios.Listar');
-});
+Route::get('/Listar_Usuarios', [App\Http\Controllers\UserController::class, 'listar'])->name('user.listar');
 Route::get('/Modificar_Usuarios', function () {
     return view('APP.Usuarios.Update');
 });

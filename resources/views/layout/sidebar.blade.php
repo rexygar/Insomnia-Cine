@@ -11,7 +11,7 @@
             </div>
             <div class="dropdown">
                 <span>
-                   
+
                 </span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name"
                     data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
@@ -35,25 +35,25 @@
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-film"></i><span>Peliculas</span></a>
                     <ul>
-                        <li><a href="">Listar</a></li>
+                        <li><a href="{{ route('pelicula.listar') }}">Listar</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-newspaper-o"></i><span>Noticias</span></a>
                     <ul>
-                        <li><a href="#">Listar</a></li>
+                        <li><a href="{{ route('noticia.listar') }}">Listar</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-file"></i><span>Blog</span></a>
                     <ul>
-                        <li><a href="#">Listar</a></li>
+                        <li><a href="{{ route('blog.listar') }}">Listar</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="has-arrow"><i class="fa fa-user"></i><span>Usuarios</span></a>
                     <ul>
-                        <li><a href="#">Listar</a></li>
+                        <li><a href="{{ route('user.listar') }}">Listar</a></li>
                     </ul>
                 </li>
                 <!--

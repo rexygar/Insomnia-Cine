@@ -23,12 +23,12 @@ class Pelicula extends Model
 
     public function Genero()
     {
-        return $this->belongsTo('App\Genero');
+        return $this->hasMany(Pelicula_Genero::class);
     }
 
     public function Funciones()
     {
-        return $this->hasMany('App\Funcion', 'id');
+        return $this->hasMany(Funcion::class, 'id');
     }
 
 

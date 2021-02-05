@@ -15,13 +15,13 @@ class Pelicula_Genero extends Model
          'genero_id',
     ];
 
-    public function Generos()
+    public function Genero()
     {
-        return $this->belongsTo('App\Genero');
+        return $this->belongsTo(Genero::class,'genero_id');
     }
-    public function Peliculas()
+    public function Pelicula()
     {
-        return $this->belongsTo('App\Pelicula');
+        return $this->belongsTo(Pelicula::class,'pelicula_id');
     }
 
 

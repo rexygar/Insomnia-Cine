@@ -17,7 +17,7 @@ class Genero extends Model
     ];
     public function Peliculas()
     {
-        return $this->hasMany('App\Pelicula', 'id');
+        return $this->hasMany(Pelicula_Genero::class, 'id');
     }
 
 

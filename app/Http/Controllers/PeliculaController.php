@@ -8,7 +8,7 @@ use App\Models\Genero;
 use App\Models\Pelicula_Genero;
 use Illuminate\Http\Request;
 use DataTables;
-
+use Illuminate\Support\Facades\DB;
 class PeliculaController extends Controller
 {
     public function index()
@@ -72,7 +72,16 @@ class PeliculaController extends Controller
             $Pelicula->save();
             // ------- Genero ------
             $GeneroID = request('Genero');
-            if ($GeneroID == 1000) {
+            if ($GeneroID != 1000) {
+
+                $ultimaIDPeli =  $Pelicula->id;
+                $pelicula_Genero = new Pelicula_Genero();
+                $pelicula_Genero->pelicula_id = $ultimaIDPeli;
+                $pelicula_Genero->genero_id = request('Genero');
+                $pelicula_Genero->save();
+
+                // $Pelicula->
+            } else {
                 $Genero = new  Genero();
                 $Genero->nombre =  request('GeneroNew');
                 $Genero->save();
@@ -83,15 +92,6 @@ class PeliculaController extends Controller
                 $pelicula_Genero->pelicula_id = $ultimaIDPeli;
                 $pelicula_Genero->genero_id = $ultimaIDGene;
                 $pelicula_Genero->save();
-
-
-                // $Pelicula->
-            } else {
-                $ultimaIDPeli =  $Pelicula->id;
-                $pelicula_Genero = new Pelicula_Genero();
-                $pelicula_Genero->pelicula_id = $ultimaIDPeli;
-                $pelicula_Genero->genero_id = request('Genero');
-                $pelicula_Genero->save();
             }
             // for ($i = 0; $i < 10; $i++) {
             //     $newTask = $Pelicula->replicate(); //para llenar la bd de prueba
@@ -99,10 +99,25 @@ class PeliculaController extends Controller
 
             // }
             // return redirect()->action('PhotoController@index');
-            return redirect()->to('/*Listar*');
+            return redirect()->to('PeliculaS');
         } else {
 
             return view('APP.Peliculas.Create');
         }
+    }
+
+
+    public function show($idPelicula, Request $request)
+    {
+
+        $pelicula = Pelicula::findOrFail($idPelicula);
+        $genero_Pelicula = Pelicula::findOrFail($idPelicula)->Genero;
+        $i = 0;
+        foreach ($genero_Pelicula as $genero) {
+            $ids[$i] = $genero->genero_id;
+            $i++;
+        }
+        $Generos = Genero::find($ids);
+        return view('APP.Peliculas.Show', compact('pelicula','Generos'));
     }
 }

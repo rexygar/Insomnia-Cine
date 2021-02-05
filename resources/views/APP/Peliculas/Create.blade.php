@@ -44,10 +44,10 @@
                                             <div class="form-group col-md-12">
                                                 <label for="Sinopsis "> Sinopsis:</label>
                                                 <textarea required placeholder="ingrese una Sinopsis"
-                                                class="form-control input-ctrl-bg" id="Sinopsis" name="Sinopsis"
-                                                rows="10" placeholder="Ingrese una Sinopsis"></textarea>
+                                                    class="form-control input-ctrl-bg" id="Sinopsis" name="Sinopsis"
+                                                    rows="10" placeholder="Ingrese una Sinopsis"></textarea>
                                             </div>
-                                            
+
                                             <div class="form-group col-md-12">
                                                 <label for="Duracion">Duracion:</label>
                                                 <input required placeholder="ingrese el Duracion de la publicacion"
@@ -63,37 +63,33 @@
                                                             <label for="Año_estreno">Año_estreno:</label>
                                                             <input class="form-control input-ctrl-bg" type="date"
                                                                 name="Año_estreno" id="Año_estreno">
-                                                                 <input type="hidden" name="En_Cartelera" value="1" id="En_Cartelera">
+                                                            <input type="hidden" name="En_Cartelera" value="1"
+                                                                id="En_Cartelera">
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="Genero">Genero:</label>
                                                             <select class="form-control input-ctrl-bg" name="Genero"
                                                                 id="Genero">
                                                                 <option value="0">--- Seleccionar Genero ---</option>
+                                                                @foreach($Genero as $gene)
+                                                                    <option value="{{ $gene->id }}">
+                                                                        {{ $gene ->nombre }}</option>
+                                                                @endforeach
                                                                 <option value="1000">--- Nuevo Genero ---</option>
-                                                                {{-- @foreach ($Genero as $cate)
-                                                                    <option value="{{ $cate->idGenero }}">
-                                                                {{ $cate ->Genero }}</option>
-                                                                <option value="1"> </option>
-                                                                {{-- @foreach ($Genero as $cate)
-                                                                        <option value="{{ $cate->idGenero }}">
-                                                                {{ $cate ->Genero }}</option>
-                                                                @endforeach--}}
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-md-12 Gopcional">
-                                                            <form action=""><label for="GeneroNew">Genero:</label>
-                                                                <input required
-                                                                    placeholder="ingrese el Genero de la publicacion"
-                                                                    type="input" class="form-control input-ctrl-bg"
-                                                                    id="GeneroNew" name="GeneroNew">
-                                                            </form>
+                                                            <label for="GeneroNew">Genero:</label>
+                                                            <input
+                                                                placeholder="ingrese el Genero de la publicacion"
+                                                                type="input" class="form-control input-ctrl-bg"
+                                                                id="GeneroNew" name="GeneroNew">
                                                         </div>
 
                                                         <div class="form-group col-md-12">
                                                             <label for="Clasificacion">Clasificacion:</label>
-                                                            <select class="form-control input-ctrl-bg" name="Clasificacion"
-                                                                id="Clasificacion">
+                                                            <select class="form-control input-ctrl-bg"
+                                                                name="Clasificacion" id="Clasificacion">
                                                                 <option value="0">--- Seleccionar Clasificacion ---
                                                                 </option>
                                                                 <option value="TE">--- TE (todos los espectadores) ---
@@ -104,12 +100,14 @@
                                                                 </option>
                                                                 <option value="18">--- 18 (mayores de 14 años) ---
                                                                 </option>
-                                                                <option value="1000">--- Nueva Clasificacion ---</option>
+                                                                <option value="1000">--- Nueva Clasificacion ---
+                                                                </option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-md-12 Copcional">
-                                                            <form action=""><label for="ClasificacionNew">Clasificacion:</label>
-                                                                <input required
+                                                            <form action=""><label
+                                                                    for="ClasificacionNew">Clasificacion:</label>
+                                                                <input
                                                                     placeholder="ingrese el Clasificacion de la publicacion"
                                                                     type="input" class="form-control input-ctrl-bg"
                                                                     id="ClasificacionNew" name="ClasificacionNew">
@@ -153,14 +151,14 @@
                     </div> --}}
                                             </div>
                                             <div class="row">
-                                                @if ($errors->any())
-                                                <div class="alert alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
+                                                @if($errors->any())
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
                                                 @endif
                                             </div>
                                         </div>

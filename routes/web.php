@@ -28,13 +28,15 @@ Route::get('authentication/forgotpassword',         [App\Http\Controllers\Authen
 Route::get('authentication/error404',               [App\Http\Controllers\AuthenticationController::class, 'error404'])->name('authentication.error404');
 
 //Peliculas
-Route::get('/Crear_pelicula', function () {
-    return view('APP.Peliculas.Create');
-});
+Route::any('/PeliculaS', 'App\Http\Controllers\PeliculaController');
+Route::any('/PeliculaS/create', [App\Http\Controllers\PeliculaController::class, 'store'])->name('pelicula.Create');
+// Route::get('/Crear_pelicula', function () {
+//     return view('APP.Peliculas.Create');
+// });
 Route::get('/Listar_pelicula', [App\Http\Controllers\PeliculaController::class, 'listar'])->name('pelicula.listar');
-Route::get('/Modificar_pelicula', function () {
-    return view('APP.Peliculas.Update');
-});
+// Route::get('/Modificar_pelicula', function () {
+//     return view('APP.Peliculas.Update');
+// });
 // Route::get('/Eliminar_pelicula', function () {
 //     return view('APP.Peliculas.Create');
 // });

@@ -32,7 +32,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="col-md-12">
-                                    <form method="POST" action="" enctype="multipart/form-data">
+                                    <form method="POST" action="/PeliculaS" enctype="multipart/form-data">
                                         <div class="col-md-11 offset-lg-1">
                                             {{ csrf_field() }}
                                             <div class="form-group col-md-12">
@@ -63,6 +63,7 @@
                                                             <label for="Año_estreno">Año_estreno:</label>
                                                             <input class="form-control input-ctrl-bg" type="date"
                                                                 name="Año_estreno" id="Año_estreno">
+                                                                 <input type="hidden" name="En_Cartelera" value="1" id="En_Cartelera">
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="Genero">Genero:</label>
@@ -151,7 +152,17 @@
                         </label>
                     </div> --}}
                                             </div>
-
+                                            <div class="row">
+                                                @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                @endif
+                                            </div>
                                         </div>
                                     </form>
                                 </div>

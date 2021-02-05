@@ -95,4 +95,6 @@ Route::get('/Modificar_Usuarios', function () {
 //     return view('APP.Usuarios.Create');
 // });
 
-
+Route::get('/Perfil', function(){
+    return view('APP.Perfil.perfil');
+})->name('perfil');

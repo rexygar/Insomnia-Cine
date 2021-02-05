@@ -17,14 +17,14 @@
                     data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
                     <li>
+                        <a href="{{ route('perfil') }}"><i class="fa fa-address-card"></i><span>Perfil</span></a>
+                    </li>
+                    <li>
                         <form id="salir" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <a href="#" onclick="document.getElementById('salir').submit()"><i
                                     class="fa fa-power-off"></i>Salir</a>
                         </form>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-address-card"></i><span>Perfil</span></a>
                     </li>
                 </ul>
             </div>
@@ -63,9 +63,9 @@
                     <hr style="width: 100%">
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-address-card"></i><span>Perfil</span></a>
+                    <a href="{{ route('perfil') }}"><i class="fa fa-address-card"></i><span>Perfil</span></a>
                 </li>
-                
+
             </ul>
             <br><br><br><br><br><br>
         </nav>

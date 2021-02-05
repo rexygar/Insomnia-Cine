@@ -28,8 +28,8 @@ Route::get('authentication/forgotpassword',         [App\Http\Controllers\Authen
 Route::get('authentication/error404',               [App\Http\Controllers\AuthenticationController::class, 'error404'])->name('authentication.error404');
 
 //Peliculas
-Route::any('/PeliculaS', 'App\Http\Controllers\PeliculaController');
-Route::any('/PeliculaS/create', [App\Http\Controllers\PeliculaController::class, 'store'])->name('pelicula.Create');
+Route::resource('/PeliculaS', 'App\Http\Controllers\PeliculaController');
+// Route::any('/PeliculaS/create', [App\Http\Controllers\PeliculaController::class, 'store'])->name('pelicula.Create');
 // Route::get('/Crear_pelicula', function () {
 //     return view('APP.Peliculas.Create');
 // });

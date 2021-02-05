@@ -44,10 +44,16 @@
                                             <div class="form-group col-md-12">
                                                 <label for="Sinopsis "> Sinopsis:</label>
                                                 <textarea required placeholder="ingrese una Sinopsis"
-                                                    class="form-control input-ctrl-bg" id="Sinopsis" name="Sinopsis"
-                                                    rows="10" placeholder="Ingrese una Sinopsis"></textarea>
+                                                class="form-control input-ctrl-bg" id="Sinopsis" name="Sinopsis"
+                                                rows="10" placeholder="Ingrese una Sinopsis"></textarea>
                                             </div>
-
+                                            
+                                            <div class="form-group col-md-12">
+                                                <label for="Duracion">Duracion:</label>
+                                                <input required placeholder="ingrese el Duracion de la publicacion"
+                                                    type="input" class="form-control input-ctrl-bg" id="Duracion"
+                                                    name="Duracion">
+                                            </div>
 
 
                                             <div class="container">
@@ -74,20 +80,38 @@
                                                                 @endforeach--}}
                                                             </select>
                                                         </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label for="Clasificacion">Clasificacion:</label>
-                                                            <select class="form-control input-ctrl-bg" name="Subcat"
-                                                                id="Subcat">
-                                                                <option value="0">--- Seleccionar Clasificacion ---
-                                                                </option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group col-md-12 opcional">
+                                                        <div class="form-group col-md-12 Gopcional">
                                                             <form action=""><label for="GeneroNew">Genero:</label>
                                                                 <input required
                                                                     placeholder="ingrese el Genero de la publicacion"
                                                                     type="input" class="form-control input-ctrl-bg"
                                                                     id="GeneroNew" name="GeneroNew">
+                                                            </form>
+                                                        </div>
+
+                                                        <div class="form-group col-md-12">
+                                                            <label for="Clasificacion">Clasificacion:</label>
+                                                            <select class="form-control input-ctrl-bg" name="Clasificacion"
+                                                                id="Clasificacion">
+                                                                <option value="0">--- Seleccionar Clasificacion ---
+                                                                </option>
+                                                                <option value="TE">--- TE (todos los espectadores) ---
+                                                                </option>
+                                                                <option value="TE+7">--- TE+7 (mayores de 7 años) ---
+                                                                </option>
+                                                                <option value="14">--- 14 (mayores de 14 años) ---
+                                                                </option>
+                                                                <option value="18">--- 18 (mayores de 14 años) ---
+                                                                </option>
+                                                                <option value="1000">--- Nueva Clasificacion ---</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-12 Copcional">
+                                                            <form action=""><label for="ClasificacionNew">Clasificacion:</label>
+                                                                <input required
+                                                                    placeholder="ingrese el Clasificacion de la publicacion"
+                                                                    type="input" class="form-control input-ctrl-bg"
+                                                                    id="ClasificacionNew" name="ClasificacionNew">
                                                             </form>
                                                         </div>
                                                     </div>
@@ -154,13 +178,22 @@
 <script defer>
     window.onload = function () {
 
-        $('.opcional').hide();
+        $('.Gopcional').hide();
+        $('.Copcional').hide();
         $('select[name="Genero"]').on('change', function () {
             var GeneroID = $(this).val();
             if (GeneroID == 1000) {
-                $('.opcional').show();
+                $('.Gopcional').show();
             } else {
-                $('.opcional').hide();
+                $('.Gopcional').hide();
+            }
+        });
+        $('select[name="Clasificacion"]').on('change', function () {
+            var GeneroID = $(this).val();
+            if (GeneroID == 1000) {
+                $('.Copcional').show();
+            } else {
+                $('.Copcional').hide();
             }
         });
     };

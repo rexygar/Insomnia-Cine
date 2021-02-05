@@ -23,7 +23,7 @@ class Blog extends Model
     }
     public function Posts()
     {
-        return $this->hasMany('App\Genero', 'id');
+        return $this->hasMany('App\TipoPublicacion', 'id');
     }
 
 

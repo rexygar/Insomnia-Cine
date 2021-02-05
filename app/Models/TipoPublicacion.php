@@ -5,20 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genero extends Model
+class TipoPublicacion extends Model
 {
     use HasFactory;
 
-    protected $table = 'genero';
-
+    protected $table = 'tipo_publicacion';
     protected $fillable =[
-        'nombre',
-
+        'nombre'
     ];
-    public function Peliculas()
+
+
+    public function Post()
     {
-        return $this->hasMany('App\Pelicula', 'id');
+        return $this->belongsTo('App\Blog');
     }
+
 
 
 }

@@ -81,6 +81,65 @@
             </form>
         </div>
     </div>
+    @if (isset($Generos[0]->id))
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered data-table" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Eliminar</th>
+                    </tr>
+                    <tr>
+                        @php
+                        $i =0;
+                        @endphp
+
+                        @foreach ($Generos as $genero)
+        
+        
+                        <th class="text-center">{{$genero->id }} id</th>
+                        <th class="text-center">{{$genero->nombre }} nombre</th>
+                        <th class="text-center">
+                            <form action="" method="POST">
+                                <input type="hidden" name="Relacion_id" value="{{$id_relacion[$i]}}">
+                                <span class="btn btn-default">Borrar</span>
+                            </form>
+                        </th>
+                        @php
+                        $i++;
+                        @endphp
+                    </tr>
+                    @endforeach
+                </thead>
+                <tbody>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>    
+    @else
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered data-table" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Eliminar</th>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>   
+    @endif
     <div class="row">
         <div class="col-md-12">
             <h3>Listing Images</h3>
